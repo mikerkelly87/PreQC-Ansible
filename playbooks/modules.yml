@@ -1,0 +1,21 @@
+---
+
+- lineinfile:
+    path: /etc/modules
+    state: present
+    line: '{{ item }}'
+    create: yes
+  with_items:
+    - bonding
+    - e1000e
+    - ixgbe
+    - 8021q
+
+- modprobe:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - bonding
+    - e1000e
+    - ixgbe
+    - 8021q

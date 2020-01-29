@@ -1,0 +1,8 @@
+---
+
+- lineinfile:
+    path: /etc/ssh/sshd_config
+    state: present
+    regexp: '^MaxSessions'
+    line: 'MaxSessions 100'
+    create: yes

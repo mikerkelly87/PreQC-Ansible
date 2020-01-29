@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+  become_user: root
+
+  tasks:
+    - name: Install Packages
+      include_tasks: install_packages.yml
+    - name: Set SSH Max Sessions
+      include_tasks: set_max_sessions.yml
+    - name: Load Required Modules
+      include_tasks: modules.yml
+    - name: Install Recap
+      include_tasks: recap.yml
+    - name: Enable KDUMP 
+      include_tasks: kdump.yml
+    - name: Set Timezone to UTC
+      include_tasks: timezone.yml

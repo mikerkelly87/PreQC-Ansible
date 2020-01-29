@@ -1,0 +1,6 @@
+---
+
+- apt:
+    update_cache: yes
+    name: ['dsh', 'curl', 'ethtool', 'ifenslave', 'vim', 'sysstat', 'linux-crashdump', 'xterm', 'bridge-utils', 'iperf', 'traceroute', 'nmap', 'screen', 'irqbalance', 'git', 'bc', 'make', 'python-dev', 'python3-dev', 'aptitude', 'build-essential', 'git', 'openssh-server', 'python', 'python-dev', 'python-pip', 'debootstrap', 'ifenslave', 'ifenslave-2.6', 'lsof', 'lvm2', 'openssh-server', 'sudo', 'tcpdump', 'vlan']
+    state: latest

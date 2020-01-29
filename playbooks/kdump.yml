@@ -1,0 +1,17 @@
+---
+
+- lineinfile:
+    path: /etc/default/kdump-tools
+    state: present
+    regexp: '^USE_KDUMP='
+    line: 'USE_KDUMP=1'
+    create: yes
+
+- lineinfile:
+    path: /etc/default/grub.d/kdump-tools.cfg
+    state: present
+    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT='
+    line: 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT crashkernel=1024M-:192M"'
+    create: yes
+
+- shell: update-grub2

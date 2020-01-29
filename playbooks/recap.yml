@@ -1,0 +1,9 @@
+---
+
+- git:
+    repo: https://github.com/rackerlabs/recap.git
+    dest: /home/rack/recap
+
+- make:
+    chdir: /home/rack/recap
+    target: install
