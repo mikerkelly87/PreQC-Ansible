@@ -7,3 +7,8 @@
 - make:
     chdir: /home/rack/recap
     target: install
+
+- template:
+    src: /home/rack/preqc/templates/recap.j2
+    dest: /etc/cron.d/recap
+

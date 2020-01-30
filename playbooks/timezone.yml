@@ -1,4 +1,28 @@
 ---
 
-- timezone:
-    name: UTC
+#- shell: timedatectl status | grep 'Time zone' | awk '{print $3}'
+#  register: timedate
+#  when: ansible_hostname == 'controller1'
+
+#- set_fact:
+#    date={{ timedate.stdout }}
+
+
+#- timezone:
+#    name: '{{ date }}'
+#- timezone:
+#    name: '{{ timedate.stdout }}'
+#
+- copy:
+    src: /etc/timezone
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: '0644'
+
+- copy:
+    src: /etc/localtime
+    dest: /etc/localtime
+    owner: root
+    group: root
+    mode: '0777'
