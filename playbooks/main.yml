@@ -16,3 +16,5 @@
       include_tasks: kdump.yml
     - name: Set Timezone to UTC
       include_tasks: timezone.yml
+    - name: Setup hosts File
+      include_tasks: hosts_file.yml

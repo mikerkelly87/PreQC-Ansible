@@ -1,0 +1,36 @@
+---
+
+- copy:
+    src: /etc/hosts
+    dest: /etc/hosts.bak
+    owner: root
+    group: root
+    mode: '0644'
+    remote_src: yes
+
+- file:
+    path: /etc/hosts
+    state: absent
+
+- file:
+    path: /etc/hosts
+    state: touch
+    owner: root
+    group: root
+    mode: '0644'
+
+- lineinfile:
+    path: /etc/hosts
+    create: yes
+    state: present
+    line: '{{ item }}'
+  with_items:
+    - '127.0.0.1    localhost.localdomain    localhost'
+    - '{{ ansible_default_ipv4.address }}    {{ ansible_hostname }}    {{ ansible_fqdn }}'
+
+- lineinfile:
+    path: /etc/hostname
+    create: yes
+    state: present
+    regexp: '^{{ ansible_hostname }}'
+    line: '{{ ansible_hostname }}'
