@@ -27,12 +27,12 @@ Make sure you copy the SSH key from controller1 to all the other nodes
 
 # Install Ansible
 ```
-# pip3 install ansible==2.9.4
+(preqc_venv) # pip3 install ansible==2.9.4
 ```
 
 # Edit the inventory
 ```
-# vim inventory
+(preqc_venv) # vim inventory
 ```
 As the hostnames for all the nodes won't be in `/etc/hosts` yet, use the following format for the inventory:
 ```
@@ -58,10 +58,10 @@ ceph3 ansible_host=10.240.0.60
 
 # Test Ansible can communicate to all the nodes
 ```
-# ansible all -i ./inventory -m ping
+(preqc_venv) # ansible all -i ./inventory -m ping
 ```
 
 # Run the PreQC playbooks
 ```
-# ansible-playbook -i ./inventory playbooks/main.yml
+(preqc_venv) # ansible-playbook -i ./inventory playbooks/main.yml
 ```
