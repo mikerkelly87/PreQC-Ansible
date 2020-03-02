@@ -32,7 +32,7 @@ git clone <URL_OF_THIS_REPO> /home/rack/preqc
 
 # Install Ansible
 ```
-(preqc_venv)# pip3 install ansible==2.9.4
+(preqc_venv)# pip install ansible==2.9.4
 ```
 
 # Edit the inventory
