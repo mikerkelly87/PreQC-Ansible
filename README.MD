@@ -10,6 +10,11 @@ Make sure you copy the SSH key from controller1 to all the other nodes
 # cd /home/rack/preqc
 ```
 
+# Clone the repo
+```
+git clone <URL_OF_THIS_REPO> /home/rack/preqc
+```
+
 # Make sure the proper python packages are installed
 ```
 # bash ./prereqs.sh
@@ -17,7 +22,7 @@ Make sure you copy the SSH key from controller1 to all the other nodes
 
 # Create the preqc virtual environment
 ```
-# virtualenv --python=python3 preqc_venv
+# virtualenv preqc_venv
 ```
 
 # Activate the preqc virtual environment
